@@ -19,5 +19,5 @@ func (u User) GetStatus() {
   if u.Status == true {
     setStatus = "Online"
   }
-  fmt.Printf("Staus of user %v is %v\n", u.Name, setStatus)
+  fmt.Printf("Staus of user is %v\n", setStatus)
 }
