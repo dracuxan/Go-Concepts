@@ -2,8 +2,8 @@
 
 ## Resources used:
 
-- [boot.dev](boot.dev)
-- Learn Go with tests - [quii.gitbook.io](quii.gitbook.io)
+- [boot.dev](https://boot.dev)
+- Learn Go with tests - [quii.gitbook.io](https://quii.gitbook.io)
 
 ### Things to remeber while testing
 
