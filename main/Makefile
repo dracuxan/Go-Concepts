@@ -2,7 +2,7 @@ PHONY: run all tidy main
 
 run:
 	@echo "running main.go..."
-	@go run main.go
+	@go run .
 
 test:
 	@echo "initiating tests..."
