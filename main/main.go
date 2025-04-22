@@ -1,6 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
-	helloWorld("Nisarg")
-	oldWorld()
+	fmt.Print(helloWorld("Nisarg"))
 }
