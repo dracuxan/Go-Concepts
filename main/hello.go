@@ -1,5 +1,12 @@
 package main
 
+const (
+	helloString = "Hello, "
+)
+
 func helloWorld(name string) string {
-	return "Hello, " + name + "!"
+	if name == "" {
+		name = "World"
+	}
+	return helloString + name
 }

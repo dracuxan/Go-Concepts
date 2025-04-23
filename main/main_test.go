@@ -3,16 +3,22 @@ package main
 import "testing"
 
 func TestHello(t *testing.T) {
-	orignal := helloWorld("Nisarg")
-	expected := "Hello, Nisarg!"
+	t.Run("say hello to name supplied", func(t *testing.T) {
+		got := helloWorld("Nisarg")
+		want := "Hello, Nisarg"
+		assertTest(t, got, want)
+	})
 
-	if orignal != expected {
-		t.Errorf("orignal: '%v' expected: '%v'", orignal, expected)
-	}
+	t.Run("say 'Hello, World' when an empty string is supplied", func(t *testing.T) {
+		got := helloWorld("")
+		want := "Hello, World"
+		assertTest(t, got, want)
+	})
 }
 
-func BenchmarkHello(b *testing.B) {
-	for b.Loop() {
-		helloWorld("Nisarg")
+func assertTest(t testing.TB, got string, want string) {
+	t.Helper()
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
 	}
 }
