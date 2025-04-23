@@ -11,3 +11,7 @@ test:
 tidy:
 	@echo "organizing dependencies..."
 	@go mod tidy
+
+bench:
+	@echo "running tests with benchmark..."
+	@go test -v -bench=.

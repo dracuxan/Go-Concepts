@@ -10,3 +10,9 @@ func TestHello(t *testing.T) {
 		t.Errorf("got %v expected %v", orignal, expected)
 	}
 }
+
+func BenchmarkHello(b *testing.B) {
+	for b.Loop() {
+		helloWorld("Nisarg")
+	}
+}
