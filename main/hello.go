@@ -1,12 +1,31 @@
 package main
 
+import "strings"
+
 const (
-	helloString = "Hello, "
+	helloStringEnglish = "Hello, "
+	helloStringSpanish = "Hola, "
+	helloStringFrench  = "Bonjour, "
+	spanish            = "spanish"
+	french             = "french"
 )
 
-func helloWorld(name string) string {
+func helloWorld(name string, language string) string {
 	if name == "" {
 		name = "World"
 	}
-	return helloString + name
+
+	return setPrrefix(language) + name
+}
+
+func setPrrefix(language string) (prefix string) {
+	switch strings.ToLower(language) {
+	case spanish:
+		prefix = helloStringSpanish
+	case french:
+		prefix = helloStringFrench
+	default:
+		prefix = helloStringEnglish
+	}
+	return
 }
