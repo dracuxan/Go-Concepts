@@ -20,6 +20,12 @@ func TestRepeat(t *testing.T) {
 	})
 }
 
+func BenchmarkRepeat(b *testing.B) {
+	for b.Loop() {
+		Repeat("a")
+	}
+}
+
 func assertTests(t testing.TB, got, expected string) {
 	t.Helper()
 	if got != expected {

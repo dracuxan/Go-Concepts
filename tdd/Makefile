@@ -14,4 +14,4 @@ tidy:
 
 bench:
 	@echo "running tests with benchmark..."
-	@go test -v -bench=.
+	@go test -v -bench=. ./...
