@@ -1,35 +1,35 @@
-package main
+package helloworld
 
 import "testing"
 
 func TestHello(t *testing.T) {
 	t.Run("say hello to name supplied", func(t *testing.T) {
-		got := helloWorld("Nisarg", "English")
+		got := HelloWorld("Nisarg", "English")
 		want := "Hello, Nisarg"
 		assertTest(t, got, want)
 	})
 
 	t.Run("say 'Hello, World' when an empty string is supplied", func(t *testing.T) {
-		got := helloWorld("", "")
-		want := "Hello, World"
+		got := HelloWorld("", "")
+		want := "Hello, Unknown"
 		assertTest(t, got, want)
 	})
 
 	t.Run("in spanish", func(t *testing.T) {
-		got := helloWorld("Nisarg", "Spanish")
+		got := HelloWorld("Nisarg", "Spanish")
 		want := "Hola, Nisarg"
 		assertTest(t, got, want)
 	})
 
 	t.Run("in french", func(t *testing.T) {
-		got := helloWorld("Nisarg", "french")
+		got := HelloWorld("Nisarg", "french")
 		want := "Bonjour, Nisarg"
 		assertTest(t, got, want)
 	})
 
 	t.Run("in french with no name", func(t *testing.T) {
-		got := helloWorld("", "French")
-		want := "Bonjour, World"
+		got := HelloWorld("", "French")
+		want := "Bonjour, Unknown"
 		assertTest(t, got, want)
 	})
 }

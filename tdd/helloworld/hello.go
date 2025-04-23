@@ -1,18 +1,19 @@
-package main
+package helloworld
 
 import "strings"
 
 const (
+	spanish = "spanish"
+	french  = "french"
+
 	helloStringEnglish = "Hello, "
 	helloStringSpanish = "Hola, "
 	helloStringFrench  = "Bonjour, "
-	spanish            = "spanish"
-	french             = "french"
 )
 
-func helloWorld(name string, language string) string {
+func HelloWorld(name string, language string) string {
 	if name == "" {
-		name = "World"
+		name = "Unknown"
 	}
 
 	return setPrrefix(language) + name

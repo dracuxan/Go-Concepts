@@ -5,7 +5,7 @@
 - [boot.dev](https://boot.dev)
 - Learn Go with tests - [quii.gitbook.io](https://quii.gitbook.io)
 
-### Development Cycle
+### Test Driven Development Cycle
 
 - Write a test
 - Make the compiler pass
