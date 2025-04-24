@@ -21,3 +21,23 @@
 - The test function must start with the word `Test`
 - The test function takes one argument only `t *testing.T`
 - To use the `*testing.T` type, you need to `import "testing"`
+
+## Running Commands
+
+Each Go project folder contains a `Makefile` with common tasks like running,
+testing, or tidying up dependencies.
+
+To see the list of available commands, just navigate to any project directory and run:
+
+```bash
+make help
+```
+
+Then you can run commands like:
+
+```bash
+make run     # Run the app
+make test    # Run tests
+make tidy    # Clean up module dependencies
+make bench   # Run benchmarks
+```
