@@ -1,3 +1,5 @@
+[![wakatime](https://wakatime.com/badge/user/0d75cfc5-da70-41b7-b8c8-661ef9d8338b/project/9795795c-2f45-46f6-8cc7-6de33ef8f8f9.svg)](https://wakatime.com/badge/user/0d75cfc5-da70-41b7-b8c8-661ef9d8338b/project/9795795c-2f45-46f6-8cc7-6de33ef8f8f9)
+
 # Learning Go
 
 ## Resources used:
