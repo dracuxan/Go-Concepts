@@ -17,3 +17,11 @@ func (c Circle) Perimeter() float64 {
 func (c Circle) Area() float64 {
 	return c.Radius * c.Radius * math.Pi
 }
+
+func (t Triangle) Area() float64 {
+	return 0.5 * (t.Base * t.Height)
+}
+
+func (t Triangle) Perimeter() float64 {
+	return t.Base + t.SideA + t.SideB
+}

@@ -13,3 +13,10 @@ type Rectangle struct {
 type Circle struct {
 	Radius float64
 }
+
+type Triangle struct {
+	Base   float64
+	Height float64
+	SideA  float64
+	SideB  float64
+}
