@@ -6,7 +6,7 @@ run:
 
 test:
 	@echo "initiating tests..."
-	@go test ./...
+	@go test ./... -cover
 
 tidy:
 	@echo "organizing dependencies..."
