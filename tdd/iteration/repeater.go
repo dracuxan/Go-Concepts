@@ -1,9 +1,7 @@
 package iteration
 
-const repeatCount = 5
-
-func Repeat(c string) (repeated string) {
-	for range repeatCount {
+func Repeat(c string, count int) (repeated string) {
+	for range count {
 		repeated += c
 	}
 	return
