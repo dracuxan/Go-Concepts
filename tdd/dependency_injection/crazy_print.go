@@ -1,1 +1,1 @@
-package dependencyinjection
+package dependencyinjectio
