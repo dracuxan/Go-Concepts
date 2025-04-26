@@ -1,14 +1,12 @@
 package main
 
 import (
-	"log"
-	"net/http"
+	"os"
 
-	"Go-Concepts/tdd/dependencies"
+	"Go-Concepts/tdd/mocking"
 )
 
 func main() {
-	log.Printf("starting server at localhost:5001...")
-
-	log.Fatal(http.ListenAndServe(":5001", http.HandlerFunc(dependencies.MyGreeterHandler)))
+	s := &mocking.DefaultSleeper{}
+	mocking.Countdown(os.Stdout, s)
 }
