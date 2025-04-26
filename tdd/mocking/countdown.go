@@ -9,16 +9,31 @@ import (
 const (
 	finalWord  = "Go!"
 	countStart = 3
+	sleep      = "sleep"
+	write      = "write"
 )
 
 type Sleeper interface {
 	Sleep()
 }
 
-type DefaultSleeper struct{}
+type ConfigurableSleeper struct {
+	duration time.Duration
+	sleep    func(time.Duration)
+}
 
-func (d *DefaultSleeper) Sleep() {
-	time.Sleep(1 * time.Second)
+func (c *ConfigurableSleeper) Sleep() {
+	c.sleep(c.duration)
+}
+
+func NewConfigurableSleeper(
+	duration time.Duration,
+	sleep func(time.Duration),
+) *ConfigurableSleeper {
+	return &ConfigurableSleeper{
+		duration: duration,
+		sleep:    sleep,
+	}
 }
 
 func Countdown(buff io.Writer, s Sleeper) {
