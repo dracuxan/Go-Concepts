@@ -8,6 +8,6 @@ import (
 )
 
 func main() {
-	sleeper := mocking.NewConfigurableSleeper(1*time.Second, time.Sleep)
+	sleeper := mocking.NewConfigurableSleeper(250*time.Millisecond, time.Sleep)
 	mocking.Countdown(os.Stdout, sleeper)
 }
