@@ -1,13 +1,11 @@
 package main
 
-import (
-	"os"
-	"time"
-
-	"Go-Concepts/tdd/mocking"
-)
+import "fmt"
 
 func main() {
-	sleeper := mocking.NewConfigurableSleeper(1*time.Second, time.Sleep)
-	mocking.Countdown(os.Stdout, sleeper)
+	fmt.Println(getName())
+}
+
+func getName() string {
+	return "Nisarg"
 }

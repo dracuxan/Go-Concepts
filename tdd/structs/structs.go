@@ -2,26 +2,34 @@ package structs
 
 import "math"
 
-func (r Rectangle) Perimeter() float64 {
-	return (r.Height + r.Width) * 2
+type Rectangle struct {
+	a int
+	b int
 }
 
-func (r Rectangle) Area() float64 {
-	return r.Height * r.Width
+type Circle struct {
+	r int
 }
 
-func (c Circle) Perimeter() float64 {
-	return 2 * c.Radius * math.Pi
+type Shapes interface {
+	Perimeter() int
+	Area() int
 }
 
-func (c Circle) Area() float64 {
-	return c.Radius * c.Radius * math.Pi
+func (r *Rectangle) Area() int {
+	return r.a * r.b
 }
 
-func (t Triangle) Area() float64 {
-	return 0.5 * (t.Base * t.Height)
+func (r *Rectangle) Perimeter() int {
+	return 2 * (r.a + r.b)
 }
 
-func (t Triangle) Perimeter() float64 {
-	return t.Base + t.SideA + t.SideB
+func (c *Circle) Area() int {
+	ans := math.Pi * float64(c.r*c.r)
+	return int(ans)
+}
+
+func (c *Circle) Perimeter() int {
+	ans := 2 * math.Pi * float64(c.r)
+	return int(ans)
 }
