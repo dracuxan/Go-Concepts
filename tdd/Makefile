@@ -1,5 +1,7 @@
 .PHONY: run all tidy test bench help
 
+all: tidy
+
 ## run: Run the main.go file
 run:
 	@echo "running main.go..."

@@ -1,0 +1,23 @@
+name: test tdd
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: move to tdd
+        run: cd tdd
+
+      - name: Install dependencies
+        run: make
+
+      - name: Run check
+        run: make test
