@@ -5,47 +5,41 @@ import (
 )
 
 func TestPerimeter(t *testing.T) {
-	checkPerimeter := func(t testing.TB, shape Shapes, want int) {
-		t.Helper()
-		got := shape.Perimeter()
-
-		if got != want {
-			t.Errorf("got %d want %d", got, want)
-		}
+	testPeri := []struct {
+		name  string
+		shape Shapes
+		want  int
+	}{
+		{name: "Rectangle", shape: &Rectangle{a: 12, b: 6}, want: 36},
+		{name: "Circle", shape: &Circle{r: 10}, want: 62},
+		{name: "Triangle", shape: &Triangle{a: 12, b: 6, c: 2}, want: 20},
 	}
-
-	t.Run("Rectangle", func(t *testing.T) {
-		r := Rectangle{10, 40}
-		want := 100
-		checkPerimeter(t, &r, want)
-	})
-
-	t.Run("Circle", func(t *testing.T) {
-		c := Circle{10}
-		want := 62
-		checkPerimeter(t, &c, want)
-	})
+	for _, s := range testPeri {
+		t.Run(s.name, func(t *testing.T) {
+			got := s.shape.Perimeter()
+			if got != s.want {
+				t.Errorf("got %d want %d", got, s.want)
+			}
+		})
+	}
 }
 
 func TestArea(t *testing.T) {
-	checkAreA := func(t testing.TB, shape Shapes, want int) {
-		t.Helper()
-		got := shape.Area()
-
-		if got != want {
-			t.Errorf("got %d want %d", got, want)
-		}
+	testPeri := []struct {
+		name  string
+		shape Shapes
+		want  int
+	}{
+		{name: "Rectangle", shape: &Rectangle{a: 12, b: 6}, want: 72},
+		{name: "Circle", shape: &Circle{r: 10}, want: 314},
+		{name: "Triangle", shape: &Triangle{a: 12, b: 6}, want: 36},
 	}
-
-	t.Run("Rectangle", func(t *testing.T) {
-		r := Rectangle{10, 10}
-		want := 100
-		checkAreA(t, &r, want)
-	})
-
-	t.Run("Circle", func(t *testing.T) {
-		c := Circle{10}
-		want := 314
-		checkAreA(t, &c, want)
-	})
+	for _, s := range testPeri {
+		t.Run(s.name, func(t *testing.T) {
+			got := s.shape.Area()
+			if got != s.want {
+				t.Errorf("got %d want %d", got, s.want)
+			}
+		})
+	}
 }
