@@ -13,11 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: move to tdd
-        run: cd tdd
-
       - name: Install dependencies
-        run: make
+        run: cd tdd; make
 
       - name: Run check
-        run: make test
+        run: cd tdd; make test
