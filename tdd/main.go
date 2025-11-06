@@ -1,11 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"net/http"
+
+	"Go-Concepts/tdd/dependencies"
+)
 
 func main() {
-	fmt.Println(getName())
-}
-
-func getName() string {
-	return "Nisarg"
+	log.Fatal(http.ListenAndServe(":1313", http.HandlerFunc(dependencies.MyGreeterHandler)))
 }

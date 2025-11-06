@@ -8,19 +8,30 @@ type (
 	}
 )
 
-func CheckWebsites(wc WebsiteChecker, urls []string) map[string]bool {
+func CheckWebsite(wc WebsiteChecker, urls []string) map[string]bool {
 	results := make(map[string]bool)
-	resultChannel := make(chan result)
 
+	resChan := make(chan result)
 	for _, url := range urls {
 		go func() {
-			resultChannel <- result{url, wc(url)}
+			resChan <- result{url, wc(url)}
 		}()
 	}
 
 	for range len(urls) {
-		r := <-resultChannel
+		r := <-resChan
 		results[r.string] = r.bool
 	}
+
+	return results
+}
+
+func SlowCheckWebsite(wc WebsiteChecker, urls []string) map[string]bool {
+	results := make(map[string]bool)
+
+	for _, url := range urls {
+		results[url] = wc(url)
+	}
+
 	return results
 }
